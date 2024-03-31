@@ -1,0 +1,14 @@
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\bin\Debug\net8.0\PokemonG.exe
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\bin\Debug\net8.0\PokemonG.deps.json
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\bin\Debug\net8.0\PokemonG.runtimeconfig.json
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\bin\Debug\net8.0\PokemonG.dll
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\bin\Debug\net8.0\PokemonG.pdb
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.AssemblyInfoInputs.cache
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.AssemblyInfo.cs
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.csproj.CoreCompileInputs.cache
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.dll
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\refint\PokemonG.dll
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.pdb
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\PokemonG.genruntimeconfig.cache
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\PokemonG\obj\Debug\net8.0\ref\PokemonG.dll

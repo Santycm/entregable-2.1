@@ -1,0 +1,14 @@
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\bin\Debug\net8.0\Basket3vs3.exe
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\bin\Debug\net8.0\Basket3vs3.deps.json
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\bin\Debug\net8.0\Basket3vs3.runtimeconfig.json
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\bin\Debug\net8.0\Basket3vs3.dll
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\bin\Debug\net8.0\Basket3vs3.pdb
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.AssemblyInfoInputs.cache
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.AssemblyInfo.cs
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.csproj.CoreCompileInputs.cache
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.dll
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\refint\Basket3vs3.dll
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.pdb
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\Basket3vs3.genruntimeconfig.cache
+C:\Users\POSEIDON\Desktop\SS\Entregable-2.1\Basket3vs3\obj\Debug\net8.0\ref\Basket3vs3.dll
