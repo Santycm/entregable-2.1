@@ -34,7 +34,9 @@ public class Pokemon : IPokemon
     {
         Random rnd = new Random();
         int RandomAttack = rnd.Next(Attacks.Length);
-        return Attacks[RandomAttack] * 1 * 1.5m;
+        decimal [] Power = new decimal[]{1, 0, 1.5m};
+        int RandomPower = rnd.Next(Power.Length);
+        return this.Attacks[RandomAttack] * Power[RandomPower];
 
     }
 
@@ -42,21 +44,39 @@ public class Pokemon : IPokemon
     {
         Random rnd = new Random();
         int RandomDefense = rnd.Next(Defenses.Length);
-        return Defenses[RandomDefense] * 1 * 0.5m;
+        decimal [] Power = new decimal[]{1, 0.5m};
+        int RandomPower = rnd.Next(Power.Length);
+        return this.Defenses[RandomDefense] * Power[RandomPower];
     }
 
     public void Damage(decimal Damage)
     {
-        Health -= Damage;
+        this.Health -= Damage;
     }
 
     public decimal getHealth()
     {
-        return Health;
+        return this.Health;
     }
 
     public string getName()
     {
-        return Name;
+        return this.Name;
+    }
+
+    public void ShowInfo()
+    {
+        Console.WriteLine($"NAME: {this.Name}");
+        Console.WriteLine($"TYPE: {this.Type}");
+        Console.WriteLine($"HEALTH: {this.Health}");
+        Console.WriteLine("ATTACKS:");
+        foreach (int attack in this.Attacks){
+            Console.WriteLine($"{attack}");
+        }
+        Console.WriteLine("DEFENSES:");
+        foreach (int defense in this.Defenses){
+            Console.WriteLine($"{defense}");
+        }
+        
     }
 }
