@@ -17,7 +17,8 @@ class Program
             Console.WriteLine("+-------------------------+");
             Console.WriteLine("| 1.Set Pokemons          |");
             Console.WriteLine("| 2.Combat                |");
-            Console.WriteLine("| 3.Exit                  |");
+            Console.WriteLine("| 3.Show Info             |");
+            Console.WriteLine("| 4.Exit                  |");
             Console.WriteLine("+-------------------------+");
             Console.WriteLine("OPTION: ");
             option = int.Parse(Console.ReadLine());
@@ -35,6 +36,9 @@ class Program
                         Console.WriteLine("Please set Pokemons!");
                     break;
                 case 3:
+                    ShowInfo();
+                    break;
+                case 4:
                     Exit = true;
                     break;
                 default:
@@ -88,21 +92,22 @@ class Program
             decimal APokemon2 = Pokemon2.Attack();
             decimal DPokemon2 = Pokemon2.Defend();
 
-            //COMBATE: Se procede a restar la salud del pokemon que tenga menos defensas
+            //COMBATE: ATAQUE DEL POKEMON 1 AL POKEMON 2
+            //Si la defensa del pokemon que es atacado es mayor al atacante se le resta la diferencia a la salud del atacante
+            if (DPokemon2 > APokemon1)
+                Pokemon1.Damage(DPokemon2 - APokemon1);
+            //Si el ataque es mayor que la defensa del pokemon que es atacado se le resta la diferencia a la salud del atacado
+            if (DPokemon2 < APokemon1)
+                Pokemon2.Damage(APokemon1 - DPokemon2);
+
+            //COMBATE: ATAQUE DEL POKEMON 2 AL POKEMON 1
+            //Si la defensa del pokemon que es atacado es mayor al atacante se le resta la diferencia a la salud del atacante
+            if (DPokemon1 > APokemon2)
+                Pokemon2.Damage(APokemon1 - APokemon2);
+            //Si el ataque es mayor que la defensa del pokemon que es atacado se le resta la diferencia a la salud del atacado
             if (DPokemon1 < APokemon2)
-                    Pokemon1.Damage(APokemon2 - DPokemon1);
+                Pokemon1.Damage(APokemon2 - DPokemon1);
 
-                if (DPokemon1 > APokemon2)
-                    Pokemon2.Damage(DPokemon1 - APokemon2);
-
-                if (DPokemon2 < APokemon1)
-                    Pokemon2.Damage(APokemon1 - DPokemon2);
-
-                if (DPokemon2 > APokemon1)
-                    Pokemon1.Damage(DPokemon2 - APokemon1);
-
-            
-            
             if (Pokemon1.getHealth() < 0 || Pokemon2.getHealth() < 0) //En caso de que la salud de uno de los pokemones sea negativa no se muestra los resultados del turno y se procede a frenar el ciclo
             {
                 break;
@@ -123,5 +128,12 @@ class Program
         else if (Pokemon2.getHealth() < Pokemon1.getHealth())
             Console.WriteLine($"Pokemon {Pokemon1.getName()} win!");
     }
-}
 
+    static void ShowInfo()
+    {
+        Console.WriteLine("---- POKEMON 1 ----");
+        Pokemon1.ShowInfo();
+        Console.WriteLine("---- POKEMON 2 ----");
+        Pokemon2.ShowInfo();
+    }
+}
