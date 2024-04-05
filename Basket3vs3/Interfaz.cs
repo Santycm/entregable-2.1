@@ -1,50 +1,34 @@
-//Es trabajo honesto
-
-//interfaz IJugador co propiedades Nombre y Rendimieto
+namespace Basket3vs3;
 public interface IJugador
 {
-    string Nombre { get; }
-    int Rendimiento { get; }
+    string Nombre();
+    int Rendimiento();
 }
 
-//encapsula el nombre y rendimiento de propiedad privadass
 public class Jugador : IJugador
 {
     private string nombre;
     private int rendimiento;
-
-// Constructor para inicializar el nombre y rendimiento
     public Jugador(string nombre)
     {
         this.nombre = nombre;
         this.rendimiento = new Random().Next(1, 11);
     }
-
-//  acceder al nombre del jugador
-    public string Nombre
+    public string Nombre()
     {
-        get
-        {
-            return nombre;
-        }
+        return nombre;
     }
 
-// acceder al rendimiento del jugador
-    public int Rendimiento
+    public int Rendimiento()
     {
-        get
-        {
-            return rendimiento;
-        }
+        return rendimiento;
     }
 }
-// Clase Equipo encapsula la información de un equipo
 public class Equipo
 {
     private string nombre;
     private List<IJugador> jugadores;
 
-// Constructor para inicializar el nombre del equipo
     public Equipo(string nombre)
     {
         this.nombre = nombre;
@@ -55,27 +39,20 @@ public class Equipo
     {
         jugadores.Add(jugador);
     }
-
     public int SumaDeRendimiento()
     {
-        int total = 0;
+        int totalR = 0;
         foreach (var jugador in jugadores)
         {
-            total = total + jugador.Rendimiento;
+            totalR = totalR + jugador.Rendimiento();
         }
-        return total;
+        return totalR;
     }
-
-    public void ListaDeJugadores()
+    public void JugadoresDeCadaEquipo()
     {
-        Console.WriteLine($"Jugadores en el {nombre}:");
-        Console.WriteLine("________________________________________");
         foreach (var jugador in jugadores)
         {
-            Console.WriteLine($"{jugador.Nombre} -----> Rendimiento: {jugador.Rendimiento}");
-            
+            Console.WriteLine($"Nombre: {jugador.Nombre()}= Rendimiento: {jugador.Rendimiento()}");
         }
     }
-
-
 }
