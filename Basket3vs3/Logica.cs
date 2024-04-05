@@ -1,14 +1,12 @@
-
-public class Partido
+namespace Basket3vs3;
+public class Basquet
 {
-    private Equipo equipoLocal;
-    private Equipo equipoVisitante;
     private List<IJugador> jugadoresDisponibles;
+    private Equipo Local;
+    private Equipo Visitante;
 
-    public Partido()
+    public Basquet()
     {
-        equipoLocal = new Equipo("Equipo Local");
-        equipoVisitante = new Equipo("Equipo Visitante");
         jugadoresDisponibles = new List<IJugador>
         {
             new Jugador("Lebron James"),
@@ -22,6 +20,9 @@ public class Partido
             new Jugador("Joel Embiid"),
             new Jugador("Nikola Jokic")
         };
+
+        Local = new Equipo("Local");
+        Visitante = new Equipo("Visitante");
     }
 
     public void RepartirJugadores()
@@ -29,44 +30,31 @@ public class Partido
         Random rr = new Random();
         for (int i = 0; i < 6; i++)
         {
-            int indice = rr.Next(jugadoresDisponibles.Count);
-            IJugador JugarRepartido = jugadoresDisponibles[indice];
-            jugadoresDisponibles.RemoveAt(indice);
+            int recorrido = rr.Next(jugadoresDisponibles.Count);
+            IJugador JugarRepartido = jugadoresDisponibles[recorrido];
+            jugadoresDisponibles.RemoveAt(recorrido);
 
             if (i % 2 == 0)
             {
-                equipoLocal.AggJugador(JugarRepartido);
+                Local.AggJugador(JugarRepartido);
             }
             else
             {
-                equipoVisitante.AggJugador(JugarRepartido);
+                Visitante.AggJugador(JugarRepartido);
             }
         }
-        Console.WriteLine("Jugadores repartidos correctamente.");
+        Console.WriteLine("Jugadores repartidos correctamente");
     }
 
-    public void MostrarJugadoresEnEquipos()
-    {
-        Console.WriteLine("");
-        Console.WriteLine("=====================Local==================");
-        Console.WriteLine("");
-        equipoLocal.ListaDeJugadores();
-        Console.WriteLine("");
-        Console.WriteLine("===================Visitante================");
-        Console.WriteLine("");
-        equipoVisitante.ListaDeJugadores();
-        Console.WriteLine("");
-    }
-
-    public void ComenzarPartido()
+    public void DecidirGanador()
     {
         Console.WriteLine("===================Resultados====================");
         Console.WriteLine("");
-        int Sumadelocal = equipoLocal.SumaDeRendimiento();
-        int SumaVisitante = equipoVisitante.SumaDeRendimiento();
+        int Sumadelocal = Local.SumaDeRendimiento();
+        int SumaVisitante = Visitante.SumaDeRendimiento();
 
-        Console.WriteLine($"Rendimiento total del equipo local: {equipoLocal.SumaDeRendimiento()}");
-        Console.WriteLine($"Rendimiento total del equipo visitante: {equipoVisitante.SumaDeRendimiento()}");
+        Console.WriteLine($"Rendimiento total del equipo local: {Local.SumaDeRendimiento()}");
+        Console.WriteLine($"Rendimiento total del equipo visitante: {Visitante.SumaDeRendimiento()}");
 
         if (Sumadelocal > SumaVisitante)
         {
@@ -80,24 +68,86 @@ public class Partido
         }
         else
         {
-            Console.WriteLine("El partido termina en empate.");
+            Console.WriteLine("El partido quedo en empatado");
         }
+
+        
     }
 
-       public void VerJugadoresDisponibles()
+    public void AggJugador()
+    {
+        Console.WriteLine("Ingrese el nombre del jugador a agregar:");
+        string nombre = Console.ReadLine();
+        jugadoresDisponibles.Add(new Jugador(nombre));
+        Console.WriteLine($"Jugador {nombre} agregado a la lista ");
+    }
+
+    public void VerJugadoresDisponibles()
+
+
     {
         Console.WriteLine("_________________________");
         Console.WriteLine("Jugadores disponibles:");
         Console.WriteLine("_________________________");
         foreach (var jugador in jugadoresDisponibles)
         {
-            Console.WriteLine(jugador.Nombre);
+            Console.WriteLine(jugador.Nombre());
         }
     }
 
-    public void IngresarNuevoJugador(string nombre)
+    public void VerJugadoresSeleccionados()
     {
-        jugadoresDisponibles.Add(new Jugador(nombre));
-        Console.WriteLine($"Jugador {nombre} agregado correctamente.");
+        Console.WriteLine("");
+        Console.WriteLine("=====================Local==================");
+        Console.WriteLine("");
+        Local.JugadoresDeCadaEquipo();
+        Console.WriteLine("");
+        Console.WriteLine("===================Visitante================");
+        Console.WriteLine("");
+        Visitante.JugadoresDeCadaEquipo();
+         Console.WriteLine("");
+    }
+
+    public void MenuPartido()
+    {
+        int opcion;
+        do
+        {
+            Console.WriteLine("Menú:");
+            Console.WriteLine("1 --> Repartir jugadores");
+            Console.WriteLine("2 --> Ver jugadores seleccionados ");
+            Console.WriteLine("3 --> Ver jugadores disponibles");
+            Console.WriteLine("4 --> Agregar un nuevo jugador a la lista");
+            Console.WriteLine("5 --> Decidir ganador");
+            Console.WriteLine("6 --> Salir");
+            Console.Write("Seleccione una opción: ");
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    RepartirJugadores();
+                    break;
+                case 2:
+                    VerJugadoresSeleccionados();
+                    break;
+                case 3:
+                    VerJugadoresDisponibles();
+                    break;
+                case 4:
+                    AggJugador();
+                    break;
+                case 5:
+                    DecidirGanador();
+                    break;
+                case 6:
+                    Console.WriteLine("Saliendo....");
+                    break;
+
+                default:
+                    Console.WriteLine("Opcion no valida de nuevo la opcion");
+                    break;
+            }
+        } while (opcion != 6);
     }
 }
